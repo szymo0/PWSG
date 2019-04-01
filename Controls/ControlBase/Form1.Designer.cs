@@ -36,6 +36,8 @@
             this.txtFind = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlTest2 = new System.Windows.Forms.Panel();
+            this.pnlAddedControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddControls
@@ -69,15 +71,16 @@
             this.pnlAddedControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlAddedControls.Controls.Add(this.pnlTest2);
             this.pnlAddedControls.Location = new System.Drawing.Point(12, 50);
             this.pnlAddedControls.Name = "pnlAddedControls";
-            this.pnlAddedControls.Size = new System.Drawing.Size(412, 220);
+            this.pnlAddedControls.Size = new System.Drawing.Size(349, 172);
             this.pnlAddedControls.TabIndex = 3;
             // 
             // btnCountControls
             // 
             this.btnCountControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCountControls.Location = new System.Drawing.Point(297, 285);
+            this.btnCountControls.Location = new System.Drawing.Point(394, 285);
             this.btnCountControls.Name = "btnCountControls";
             this.btnCountControls.Size = new System.Drawing.Size(127, 26);
             this.btnCountControls.TabIndex = 4;
@@ -111,11 +114,18 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Znajdź";
             // 
+            // pnlTest2
+            // 
+            this.pnlTest2.Location = new System.Drawing.Point(183, 19);
+            this.pnlTest2.Name = "pnlTest2";
+            this.pnlTest2.Size = new System.Drawing.Size(326, 190);
+            this.pnlTest2.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 330);
+            this.ClientSize = new System.Drawing.Size(533, 330);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.txtFind);
@@ -126,6 +136,7 @@
             this.Controls.Add(this.btnAddControls);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.pnlAddedControls.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +152,7 @@
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pnlTest2;
     }
 }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,25 @@ namespace ControlBase
     {
         private const int BUTTON_WIDHT = 60;
         private const int BUTTON_HEIGHT = 30;
+        private static int countAddButtonClick = 0;
         public Form1()
         {
             InitializeComponent();
+            pnlAddedControls.BackColor = TransparencyKey;
         }
 
         private void BtnAddControls_Click(object sender, EventArgs e)
         {
-            pnlAddedControls.Controls.Clear();
+            countAddButtonClick++;
+            AddButtons(countAddButtonClick%2==0?pnlAddedControls:pnlTest2,CountControls());
+            RefreshControlNumber();
+        }
 
-            var width = pnlAddedControls.Width;
+        private void AddButtons(Panel panel,int statIndex)
+        {
+            panel.Controls.Clear();
+
+            var width = panel.Width;
 
             var numberOfControls2Add = int.Parse(textBox1.Text);
 
@@ -37,18 +47,20 @@ namespace ControlBase
 
                 Button button = new Button()
                 {
-                    Name = FormatButtonName(i),
-                    Text = i.ToString(),
-                    Size = new Size(BUTTON_WIDHT,BUTTON_HEIGHT),
+                    Name = FormatButtonName(statIndex+i),
+                    Text = (statIndex+i).ToString(),
+                    Size = new Size(BUTTON_WIDHT, BUTTON_HEIGHT),
                     Location = new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT),
                     TabIndex = i,
                     //inny sposób ustawiania
                     //Left = column*BUTTON_WIDHT,
                     //Top = row*BUTTON_HEIGHT
                 };
-                pnlAddedControls.Controls.Add(button);
+                Debug.WriteLine($"Add button {button.Name} on location {button.Location.X}:{button.Location.Y} in {panel.Name}");
+                panel.Controls.Add(button);
+                panel.BringToFront();
+                panel.Visible = true;
             }
-            RefreshControlNumber();
         }
 
         private void BtnCountControls_Click(object sender, EventArgs e)
