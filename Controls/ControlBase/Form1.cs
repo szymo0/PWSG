@@ -49,7 +49,15 @@ namespace ControlBase
 
         private void BtnCountControls_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"kontrolek na formie: {this.Controls.Count}");
+            var contolsCount = this.Controls.Count;
+
+            //recurence
+            if (pnlAddedControls.HasChildren)
+            {
+                contolsCount += pnlAddedControls.Controls.Count;
+            }
+            MessageBox.Show($"kontrolek na formie: {contolsCount}");
+
         }
     }
 }
