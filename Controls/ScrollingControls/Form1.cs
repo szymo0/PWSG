@@ -15,7 +15,7 @@ namespace ScrollingControls
         public Form1()
         {
             InitializeComponent();
-  
+            pictureBox1.Size = pictureBox1.BackgroundImage.Size;
         }
     }
 }
