@@ -22,7 +22,6 @@ namespace ControlBase
         private void BtnAddControls_Click(object sender, EventArgs e)
         {
             var width = pnlAddedControls.Width;
-            var height = pnlAddedControls.Height;
 
             var numberOfControls2Add = int.Parse(textBox1.Text);
 
