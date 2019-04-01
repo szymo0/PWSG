@@ -66,6 +66,9 @@
             // 
             // pnlAddedControls
             // 
+            this.pnlAddedControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAddedControls.Location = new System.Drawing.Point(12, 50);
             this.pnlAddedControls.Name = "pnlAddedControls";
             this.pnlAddedControls.Size = new System.Drawing.Size(412, 220);
@@ -73,6 +76,7 @@
             // 
             // btnCountControls
             // 
+            this.btnCountControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCountControls.Location = new System.Drawing.Point(297, 285);
             this.btnCountControls.Name = "btnCountControls";
             this.btnCountControls.Size = new System.Drawing.Size(127, 26);
