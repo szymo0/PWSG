@@ -33,11 +33,8 @@ namespace ControlBase
         {
             panel.Controls.Clear();
 
-            var width = panel.Width;
-
             var numberOfControls2Add = int.Parse(textBox1.Text);
-
-            var controlsInRow = width / BUTTON_WIDHT;
+            var controlsInRow = CountButtonsInRow(panel, numberOfControls2Add);
 
 
             for (int i = 0; i < numberOfControls2Add; i++)
@@ -50,7 +47,7 @@ namespace ControlBase
                     Name = FormatButtonName(statIndex+i),
                     Text = (statIndex+i).ToString(),
                     Size = new Size(BUTTON_WIDHT, BUTTON_HEIGHT),
-                    Location = new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT),
+                    Location = GetAddedButtonLocation(row,column),
                     TabIndex = i,
                     //inny sposób ustawiania
                     //Left = column*BUTTON_WIDHT,
@@ -127,6 +124,34 @@ namespace ControlBase
         private string FormatButtonName(int i)
         {
             return "btn" + i;
+        }
+
+        private void Panel_Resize(object sender, EventArgs e)
+        {
+            var panel = sender as Panel;
+            if(panel==null || !panel.HasChildren) return;
+
+            var controlsInRow = CountButtonsInRow(panel, panel.Controls.Count);
+
+            for (int i = 0; i < panel.Controls.Count; i++)
+            {
+                var column = i % controlsInRow;
+                var row = i / controlsInRow;
+
+                panel.Controls[i].Location = GetAddedButtonLocation(row, column);
+            }
+
+        }
+
+        private int CountButtonsInRow(Panel panel, int controlsCount)
+        {
+            var width = panel.Width;
+            return width / BUTTON_WIDHT;
+        }
+
+        private Point GetAddedButtonLocation(int row, int column)
+        {
+            return new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT);
         }
     }
 }

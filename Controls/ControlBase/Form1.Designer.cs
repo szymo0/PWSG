@@ -74,6 +74,7 @@
             this.pnlAddedControls.Name = "pnlAddedControls";
             this.pnlAddedControls.Size = new System.Drawing.Size(349, 172);
             this.pnlAddedControls.TabIndex = 3;
+            this.pnlAddedControls.Resize += new System.EventHandler(this.Panel_Resize);
             // 
             // btnCountControls
             // 
@@ -114,10 +115,14 @@
             // 
             // pnlTest2
             // 
+            this.pnlTest2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTest2.Location = new System.Drawing.Point(183, 39);
             this.pnlTest2.Name = "pnlTest2";
             this.pnlTest2.Size = new System.Drawing.Size(326, 190);
             this.pnlTest2.TabIndex = 8;
+            this.pnlTest2.Resize += new System.EventHandler(this.Panel_Resize);
             // 
             // Form1
             // 
