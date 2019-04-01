@@ -102,22 +102,32 @@ namespace ControlBase
         private void BtnFind_Click(object sender, EventArgs e)
         {
             var buttonNumber=int.Parse(txtFind.Text);
-
-            if (!pnlAddedControls.HasChildren)
+            Control control = null;
+            foreach (Control panel in Controls)
             {
-                MessageBox.Show("Brak dodanych przycisków");
-                return;
+                if (panel is Panel)
+                {
+
+                    if (!panel.HasChildren)
+                    {
+                        continue;
+                    }
+
+                    control = panel.Controls.Find(FormatButtonName(buttonNumber), false)
+                        .FirstOrDefault();
+                    if (control == null)
+                    {
+                        continue;
+                    }
+
+                    control.BackColor = Color.Aqua;
+                    control.Focus();
+                    break;
+                }
             }
 
-            var control=pnlAddedControls.Controls.Find(FormatButtonName(buttonNumber),false).FirstOrDefault();
-            if (control == null)
-            {
-                MessageBox.Show("Nieznaleziono przycisku");
-                return;
-            }
-
-            control.BackColor=Color.Aqua;
-            control.Focus();
+            if(control!=null)
+                MessageBox.Show($"Top level control name: {control.TopLevelControl.Name}");
 
         }
 
