@@ -37,8 +37,10 @@ namespace ControlBase
                     Name = "btn" + i,
                     Text = i.ToString(),
                     Size = new Size(BUTTON_WIDHT,BUTTON_HEIGHT),
-                    Left = column*BUTTON_WIDHT,
-                    Top = row*BUTTON_HEIGHT
+                    Location = new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT)
+                    //inny sposób ustawiania
+                    //Left = column*BUTTON_WIDHT,
+                    //Top = row*BUTTON_HEIGHT
                 };
                 pnlAddedControls.Controls.Add(button);
             }
