@@ -33,6 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlAddedControls = new System.Windows.Forms.Panel();
             this.btnCountControls = new System.Windows.Forms.Button();
+            this.txtFind = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddControls
@@ -78,11 +81,40 @@
             this.btnCountControls.UseVisualStyleBackColor = true;
             this.btnCountControls.Click += new System.EventHandler(this.BtnCountControls_Click);
             // 
+            // txtFind
+            // 
+            this.txtFind.Location = new System.Drawing.Point(72, 288);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(56, 22);
+            this.txtFind.TabIndex = 5;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(134, 288);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 23);
+            this.btnFind.TabIndex = 6;
+            this.btnFind.Text = "Znajdź";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.BtnFind_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 291);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Znajdź";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 330);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnFind);
+            this.Controls.Add(this.txtFind);
             this.Controls.Add(this.btnCountControls);
             this.Controls.Add(this.pnlAddedControls);
             this.Controls.Add(this.label1);
@@ -102,6 +134,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlAddedControls;
         private System.Windows.Forms.Button btnCountControls;
+        private System.Windows.Forms.TextBox txtFind;
+        private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Label label2;
     }
 }
 

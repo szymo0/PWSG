@@ -34,9 +34,10 @@ namespace ControlBase
             {
                 var column = i % controlsInRow;
                 var row = i / controlsInRow;
+
                 Button button = new Button()
                 {
-                    Name = "btn" + i,
+                    Name = FormatButtonName(i),
                     Text = i.ToString(),
                     Size = new Size(BUTTON_WIDHT,BUTTON_HEIGHT),
                     Location = new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT)
@@ -86,6 +87,32 @@ namespace ControlBase
             }
 
             return count;
+        }
+
+        private void BtnFind_Click(object sender, EventArgs e)
+        {
+            var buttonNumber=int.Parse(txtFind.Text);
+
+            if (!pnlAddedControls.HasChildren)
+            {
+                MessageBox.Show("Brak dodanych przycisków");
+                return;
+            }
+
+            var control=pnlAddedControls.Controls.Find(FormatButtonName(buttonNumber),false).FirstOrDefault();
+            if (control == null)
+            {
+                MessageBox.Show("Nieznaleziono przycisku");
+                return;
+            }
+
+            control.BackColor=Color.Aqua;
+
+        }
+
+        private string FormatButtonName(int i)
+        {
+            return "btn" + i;
         }
     }
 }
