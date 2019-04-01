@@ -40,7 +40,8 @@ namespace ControlBase
                     Name = FormatButtonName(i),
                     Text = i.ToString(),
                     Size = new Size(BUTTON_WIDHT,BUTTON_HEIGHT),
-                    Location = new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT)
+                    Location = new Point(column * BUTTON_WIDHT, row * BUTTON_HEIGHT),
+                    TabIndex = i,
                     //inny sposób ustawiania
                     //Left = column*BUTTON_WIDHT,
                     //Top = row*BUTTON_HEIGHT
@@ -107,6 +108,7 @@ namespace ControlBase
             }
 
             control.BackColor=Color.Aqua;
+            control.Focus();
 
         }
 
