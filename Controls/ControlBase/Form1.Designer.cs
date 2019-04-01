@@ -37,7 +37,6 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlTest2 = new System.Windows.Forms.Panel();
-            this.pnlAddedControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddControls
@@ -71,8 +70,7 @@
             this.pnlAddedControls.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlAddedControls.Controls.Add(this.pnlTest2);
-            this.pnlAddedControls.Location = new System.Drawing.Point(12, 50);
+            this.pnlAddedControls.Location = new System.Drawing.Point(34, 74);
             this.pnlAddedControls.Name = "pnlAddedControls";
             this.pnlAddedControls.Size = new System.Drawing.Size(349, 172);
             this.pnlAddedControls.TabIndex = 3;
@@ -116,7 +114,7 @@
             // 
             // pnlTest2
             // 
-            this.pnlTest2.Location = new System.Drawing.Point(183, 19);
+            this.pnlTest2.Location = new System.Drawing.Point(183, 39);
             this.pnlTest2.Name = "pnlTest2";
             this.pnlTest2.Size = new System.Drawing.Size(326, 190);
             this.pnlTest2.TabIndex = 8;
@@ -126,6 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 330);
+            this.Controls.Add(this.pnlTest2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.txtFind);
@@ -136,7 +135,6 @@
             this.Controls.Add(this.btnAddControls);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.pnlAddedControls.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
