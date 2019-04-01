@@ -46,12 +46,20 @@ namespace ControlBase
                 };
                 pnlAddedControls.Controls.Add(button);
             }
-
+            RefreshControlNumber();
         }
 
         private void BtnCountControls_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"kontrolek na formie: {CountControls()}");
+            RefreshControlNumber(true);
+        }
+
+        private void RefreshControlNumber(bool showMessageBox=false)
+        {
+            var message = $"kontrolek na formie: {CountControls()}";
+            if(showMessageBox)
+                MessageBox.Show(message);
+            this.Text = message;
         }
 
         private int CountControls()
