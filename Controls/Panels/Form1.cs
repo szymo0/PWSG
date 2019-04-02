@@ -15,19 +15,18 @@ namespace Panels
         public Form1()
         {
             InitializeComponent();
-
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    this.groupBox1.Controls.Add(new Button
-            //    {
-            //        Name = "btn"+i,
-            //        Size = new Size(30,30),
-            //        Text = i.ToString()
-            //    });
-            //}
-
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(tabPage2);
+            //tabControl1.SelectedIndex = tabPage2.TabIndex;
+            //tabControl1.SelectedTab = tabPage2;
+        }
 
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.Alignment = TabAlignment.Bottom;
+        }
     }
 }
