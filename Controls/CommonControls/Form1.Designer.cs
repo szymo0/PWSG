@@ -29,25 +29,8 @@
         private void InitializeComponent()
         {
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Kupić olejki do opalania",
-            "Spakować kąpielówki",
-            "Wymienić walute",
-            "Przygotować paszport",
-            "Wylecieć na wakacje"});
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 12);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(209, 94);
-            this.checkedListBox1.TabIndex = 0;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
-            this.checkedListBox1.SelectedValueChanged += new System.EventHandler(this.CheckedListBox1_SelectedValueChanged);
             // 
             // textBox1
             // 
@@ -63,7 +46,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 356);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkedListBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -73,7 +55,6 @@
 
         #endregion
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TextBox textBox1;
     }
 }
