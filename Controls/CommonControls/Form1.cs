@@ -33,5 +33,10 @@ namespace CommonControls
             Debug.WriteLine($"CheckState {checkBox1.CheckState}");
             Debug.WriteLine($"Checked {checkBox1.Checked}");
         }
+
+        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton3.Checked = ((RadioButton)sender).Checked;
+        }
     }
 }
