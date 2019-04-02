@@ -15,9 +15,7 @@ namespace CommonControls
         public Form1()
         {
             InitializeComponent();
-            label1.Text = "PWSG label";
-            linkLabel1.Text = "Link to PWSG";
-            linkLabel1.Links.Add(0, 10);
+      
         }
     }
 }
