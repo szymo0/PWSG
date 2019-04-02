@@ -19,36 +19,6 @@ namespace CommonControls
       
         }
 
-        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-            Debug.WriteLine("TextBox1_KeyDown");
-        }
-
-        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Debug.WriteLine("TextBox1_KeyPress");
-            if (e.KeyChar == 'm') e.Handled = true;
-
-        }
-
-        private void TextBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            Debug.WriteLine("TextBox1_KeyUp");
-        }
-
-        private void TextBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            Debug.WriteLine("TextBox1_PreviewKeyDown");
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
-        {
-            Text = e.Location.ToString();
-        }
+   
     }
 }
