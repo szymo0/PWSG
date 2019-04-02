@@ -13,11 +13,12 @@ namespace CommonControls
 {
     public partial class Form1 : Form
     {
+        ListView listView1;
         public Form1()
         {
             InitializeComponent();
             // Create a new ListView control.
-            ListView listView1 = new ListView();
+            listView1 = new ListView();
             listView1.Bounds = new Rectangle(new Point(10, 10), new Size(300, 200));
 
             // Set the view to show details.
@@ -65,7 +66,10 @@ namespace CommonControls
 
             // Create two ImageList objects.
             ImageList imageListSmall = new ImageList();
+            imageListSmall.ImageSize = new Size(50, 50);
+
             ImageList imageListLarge = new ImageList();
+            imageListLarge.ImageSize = new Size(100, 100);
 
             // Initialize the ImageList objects with bitmaps.
             imageListSmall.Images.Add(Bitmap.FromFile(".\\Images\\1.jpg"));
@@ -79,8 +83,25 @@ namespace CommonControls
 
             // Add the ListView to the control collection.
             this.Controls.Add(listView1);
+
+            comboBox1.DataSource=Enum.GetValues(typeof(View)).Cast<View>().Select(c =>
+            new {
+                Name = c.ToString(),
+                Value = c
+            }).ToList();
+
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Value";
+            comboBox1.SelectedValueChanged += ComboBox1_SelectedValueChanged;
         }
 
-
+        private void ComboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                listView1.View = (View)comboBox1.SelectedValue;
+            }
+            catch { }
+        }
     }
 }
