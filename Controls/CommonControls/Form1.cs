@@ -19,24 +19,36 @@ namespace CommonControls
       
         }
 
-        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            Debug.WriteLine("CheckedChange");
-            Debug.WriteLine($"CheckState {checkBox1.CheckState}");
-            Debug.WriteLine($"Checked {checkBox1.Checked}");
+            Debug.WriteLine("TextBox1_KeyDown");
+        }
+
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Debug.WriteLine("TextBox1_KeyPress");
+            if (e.KeyChar == 'm') e.Handled = true;
 
         }
 
-        private void CheckBox1_CheckStateChanged(object sender, EventArgs e)
+        private void TextBox1_KeyUp(object sender, KeyEventArgs e)
         {
-            Debug.WriteLine("CheckStateChanged");
-            Debug.WriteLine($"CheckState {checkBox1.CheckState}");
-            Debug.WriteLine($"Checked {checkBox1.Checked}");
+            Debug.WriteLine("TextBox1_KeyUp");
         }
 
-        private void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void TextBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            radioButton3.Checked = ((RadioButton)sender).Checked;
+            Debug.WriteLine("TextBox1_PreviewKeyDown");
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Text = e.Location.ToString();
         }
     }
 }
