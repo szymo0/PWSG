@@ -18,12 +18,6 @@ namespace CommonControls
       
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-            fontDialog1.ShowDialog();
 
-            richTextBox1.Font = (Font)fontDialog1.Font.Clone();
-            richTextBox1.SelectionFont = (Font)fontDialog1.Font.Clone();
-        }
     }
 }
