@@ -46,9 +46,11 @@
             // maskedTextBox1
             // 
             this.maskedTextBox1.Location = new System.Drawing.Point(12, 49);
+            this.maskedTextBox1.Mask = "00000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 1;
+            this.maskedTextBox1.ValidatingType = typeof(int);
             // 
             // richTextBox1
             // 
